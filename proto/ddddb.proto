@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package ddddb;
+
+// The greeting service definition.
+service DDDDB {
+  // Sends a greeting
+  rpc Create (CreateRequest) returns (CreateReply) {}
+}
+
+// The request message containing the user's name.
+message CreateRequest {
+  string table = 1;
+  string id = 2;
+  uint64 version = 3;
+  string data = 4;
+}
+
+// The response message containing the greetings
+message CreateReply {
+  string id = 1;
+}
